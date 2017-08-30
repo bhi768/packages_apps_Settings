@@ -240,4 +240,7 @@ public class Settings extends SettingsActivity {
      */
     public static class MediaControlsSettingsActivity extends SettingsActivity {}
 
+    // Candy Settings
+    public static class CandyShopActivity extends SettingsActivity {}
+
 }

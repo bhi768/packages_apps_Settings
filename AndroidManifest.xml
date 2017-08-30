@@ -104,7 +104,7 @@
     <uses-permission android:name="android.permission.INSTALL_DYNAMIC_SYSTEM" />
     <uses-permission android:name="android.permission.BIND_CELL_BROADCAST_SERVICE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    
+
     <application android:label="@string/settings_label"
             android:icon="@drawable/ic_launcher_settings"
             android:theme="@style/Theme.Settings"
@@ -3408,6 +3408,31 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                        android:value="com.android.settings.sound.MediaControlsSettings" />
+        </activity>
+
+        <!-- CandyShop... yay! -->
+        <activity android:name=".Settings$CandyShopSettingsActivity"
+            android:label="@string/candyshop_title"
+            android:icon="@drawable/ic_homepage_candy"
+            android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="org.candy.candyshop.OwlsNestSettings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="org.candy.candyshop.CandyShop" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/candyshop_activity_summary"/>
         </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
