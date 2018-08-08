@@ -3279,9 +3279,10 @@
 
         <!-- Candy additions start -->
         <activity android:name=".Settings$CandyShopActivity"
-                  android:label="@string/candyshop_title"
-                  android:theme="@style/Theme.SubSettings"
-                  android:icon="@drawable/ic_settings_candyshop" >
+                android:label="@string/candyshop_title"
+                android:theme="@style/Theme.SubSettings"
+                android:icon="@drawable/ic_homepage_candy"
+                android:taskAffinity="com.android.settings">
             <intent-filter android:priority="1">
                 <action android:name="org.candy.candyshop.CandyShop" />
                 <category android:name="android.intent.category.DEFAULT" />

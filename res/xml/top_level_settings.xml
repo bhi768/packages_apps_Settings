@@ -33,7 +33,7 @@
         android:key="top_level_candy"
         android:title="@string/candyshop_title"
         android:summary="@string/candyshop_summary_title"
-        android:icon="@drawable/ic_settings_candyshop"
+        android:icon="@drawable/ic_homepage_candy"
         android:order="-130"
         android:fragment="org.candy.candyshop.CandyShop"/>
 
