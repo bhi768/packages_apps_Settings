@@ -66,6 +66,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     static final String TAG = "PowerUsageSummary";
 
+    private static final boolean DEBUG = false;
     private static final String KEY_BATTERY_HEADER = "battery_header";
 
     private static final String KEY_SCREEN_USAGE = "screen_usage";
@@ -271,8 +272,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(Menu.NONE, MENU_ADVANCED_BATTERY, Menu.NONE, R.string.advanced_battery_title);
-
         super.onCreateOptionsMenu(menu, inflater);
     }
 
