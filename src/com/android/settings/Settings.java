@@ -180,4 +180,5 @@ public class Settings extends SettingsActivity {
     public static class StatusBarActivity extends SettingsActivity { /* empty */ }
     public static class NavigationActivity extends SettingsActivity { /* empty */ }
     public static class StockRoomActivity extends SettingsActivity { /* empty */ }
+    public static class CustomHeadersActivity extends SettingsActivity {}
 }
