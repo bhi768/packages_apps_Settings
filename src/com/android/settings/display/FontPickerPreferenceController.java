@@ -29,8 +29,6 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
 import com.android.settingslib.core.lifecycle.events.OnResume;
 
-import org.candy.candyshop.fragments.AccentPicker;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.content.FontInfo;

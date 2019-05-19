@@ -160,6 +160,19 @@
         android:key="theme_category"
         android:title="@string/theme_category_title">
 
+        <ListPreference
+            android:key="system_theme_style"
+            android:title="@string/device_theme"
+            android:entries="@array/system_theme_style_entries"
+            android:entryValues="@array/system_theme_style_values"
+            android:persistent="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="accent_color"
+            android:title="@string/accent_color"
+            android:defaultValue="0xffffff"
+            android:persistent="false" />
+
         <Preference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title" />
