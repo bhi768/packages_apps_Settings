@@ -50,7 +50,7 @@
         android:key="ambient_display_category_notification"
         android:layout="@layout/preference_category_no_label">
 
-        <com.candy.candyshop.preference.SystemSettingSwitchPreference
+        <org.candy.candyshop.preference.SystemSettingSwitchPreference
             android:key="doze_on_charge"
             android:title="@string/doze_on_charge_title"
             android:summary="@string/doze_on_charge_summary"
