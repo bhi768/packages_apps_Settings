@@ -74,11 +74,21 @@
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
     <!-- System theme -->
-    <string name="applying_theme_toast">Applying sweetness, please wait...</string>
+    <string name="applying_theme_toast">Preparing sweeetness, please wait...</string>
     <string name="theme_applied_toast">Sweetness applied!</string>
     <string name="substratum_overlays_installed_title">Candy sweetness is unavailable because a Substratum overlay is installed. Please uninstall all overlays targeting Android System to proceed.</string>
-    <string name="systemui_theme_black">Black Licorice</string>
-    <string name="accent_color">Accent color</string>
+
+    <string name="accent_color">Candy coating (accent color)</string>
+    <string name="accent_color_summary">Select a coating color</string>
+
+    <!-- System theme -->
+    <string name="theme_category_title">Eye Candy</string>
+
+
+    <string name="disable_themes_installed_title">Candy sweeteners are unavailable to avoid conflicts with Substratum. Uninstall it if you wish to use the built-in Candy sweeteners instead.</string>
+    <string name="disable_accents_installed_title">Flavor picker is unavailable to avoid conflicts with Substratum. Uninstall it if you wish to use the Candy flavor picker.</string>
+    <string name="accent_picker_dialog_title">Select a Candy accent color</string>
+
 
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">QS tile style</string>
