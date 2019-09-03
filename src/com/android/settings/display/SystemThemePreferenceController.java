@@ -41,8 +41,11 @@ public class SystemThemePreferenceController extends AbstractPreferenceControlle
 
     private static final String SYSTEM_THEME = "system_theme_style";
     private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String SWIFT_PACKAGE = "com.brit.swiftinstaller";
 
     private ListPreference mSystemThemeStyle;
+    private boolean mOtherOverlaysPresent = CandyUtils.isPackageInstalled(mContext, SUBS_PACKAGE)
+                        || CandyUtils.isPackageInstalled(mContext, SWIFT_PACKAGE);
 
     public SystemThemePreferenceController(Context context) {
         super(context);
@@ -62,7 +65,7 @@ public class SystemThemePreferenceController extends AbstractPreferenceControlle
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mSystemThemeStyle = (ListPreference) screen.findPreference(SYSTEM_THEME);
-        if (!CandyUtils.isPackageInstalled(mContext, SUBS_PACKAGE)) {
+        if (!mOtherOverlaysPresent) {
             int systemThemeStyle = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.SYSTEM_THEME, 0);
             int valueIndex = mSystemThemeStyle.findIndexOfValue(String.valueOf(systemThemeStyle));

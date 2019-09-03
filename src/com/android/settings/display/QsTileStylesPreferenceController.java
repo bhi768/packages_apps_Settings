@@ -41,9 +41,12 @@ public class QsTileStylesPreferenceController extends AbstractPreferenceControll
     private static final int MY_USER_ID = UserHandle.myUserId();
 
     private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String SWIFT_PACKAGE = "com.brit.swiftinstaller";
 
     private final Fragment mParent;
     private Preference mQsTileStylesPref;
+    private boolean mOtherOverlaysPresent = CandyUtils.isPackageInstalled(mContext, SUBS_PACKAGE)
+                        || CandyUtils.isPackageInstalled(mContext, SWIFT_PACKAGE);
 
     public QsTileStylesPreferenceController(Context context, Lifecycle lifecycle, Fragment parent) {
         super(context);
@@ -66,7 +69,7 @@ public class QsTileStylesPreferenceController extends AbstractPreferenceControll
 
     @Override
     public boolean isAvailable() {
-        return !CandyUtils.isPackageInstalled(mContext, SUBS_PACKAGE);
+        return !mOtherOverlaysPresent;
     }
 
     @Override

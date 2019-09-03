@@ -27,18 +27,29 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settings.wrapper.OverlayManagerWrapper;
 import com.android.settings.wrapper.OverlayManagerWrapper.OverlayInfo;
 
+import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.core.lifecycle.LifecycleObserver;
+import com.android.settingslib.core.lifecycle.events.OnResume;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import com.android.internal.util.candy.CandyUtils;
 
 import libcore.util.Objects;
 
 public class AccenterPreferenceController extends AbstractPreferenceController implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, LifecycleObserver, OnResume {
 
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
 
+    private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String SWIFT_PACKAGE = "com.brit.swiftinstaller";
+
     private ColorPickerPreference mThemeColor;
     private OverlayManagerWrapper mOverlayService;
+    private boolean mOtherOverlaysPresent = CandyUtils.isPackageInstalled(mContext, SUBS_PACKAGE)
+                        || CandyUtils.isPackageInstalled(mContext, SWIFT_PACKAGE);
 
     public AccenterPreferenceController(Context context) {
         super(context);
@@ -51,6 +62,10 @@ public class AccenterPreferenceController extends AbstractPreferenceController i
         return ACCENT_COLOR;
     }
 
+    public void onResume() {
+        updateSummary();
+    }
+
     @Override
     public boolean isAvailable() {
         return true;
@@ -59,12 +74,18 @@ public class AccenterPreferenceController extends AbstractPreferenceController i
     @Override
     public void displayPreference(PreferenceScreen screen) {
         mThemeColor = (ColorPickerPreference) screen.findPreference(ACCENT_COLOR);
-        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
-        int color = "-1".equals(colorVal)
-                ? Color.WHITE
-                : Color.parseColor("#" + colorVal);
-        mThemeColor.setNewPreviewColor(color);
-        mThemeColor.setOnPreferenceChangeListener(this);
+        if (!mOtherOverlaysPresent) {
+            mThemeColor.setEnabled(true);
+            String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+            int color = "-1".equals(colorVal)
+                    ? Color.WHITE
+                    : Color.parseColor("#" + colorVal);
+            mThemeColor.setNewPreviewColor(color);
+            mThemeColor.setOnPreferenceChangeListener(this);
+        } else {
+            mThemeColor.setEnabled(false);
+        }
+        updateSummary();
     }
 
     @Override
@@ -79,5 +100,17 @@ public class AccenterPreferenceController extends AbstractPreferenceController i
         return true;
         }
       return false;
+    }
+
+    public void updateSummary() {
+        if (mThemeColor != null) {
+            if (!mOtherOverlaysPresent) {
+                mThemeColor.setSummary(mContext.getString(
+                            com.android.settings.R.string.accent_color_summary));
+            } else {
+                mThemeColor.setSummary(mContext.getString(
+                        com.android.settings.R.string.disable_accents_installed_title));
+            }
+        }
     }
 }
