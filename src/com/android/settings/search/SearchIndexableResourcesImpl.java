@@ -113,7 +113,6 @@ import org.candy.candyshop.tabs.StockRoom;
 import org.candy.candyshop.fragments.BatterySettings;
 import org.candy.candyshop.fragments.Button;
 import org.candy.candyshop.fragments.ClockDateSettings;
-import org.candy.candyshop.fragments.LockScreenSettings;
 import org.candy.candyshop.fragments.NavGestureSettings;
 import org.candy.candyshop.fragments.NetworkTraffic;
 import org.candy.candyshop.fragments.QuickSettings;
@@ -223,7 +222,6 @@ public class SearchIndexableResourcesImpl implements SearchIndexableResources {
         addIndex(BatterySettings.class);
         addIndex(Button.class);
         addIndex(ClockDateSettings.class);
-        addIndex(LockScreenSettings.class);
         addIndex(NavGestureSettings.class);
         addIndex(NetworkTraffic.class);
         addIndex(QuickSettings.class);
