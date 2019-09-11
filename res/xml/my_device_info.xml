@@ -121,7 +121,7 @@
     <!-- Build number -->
     <Preference
         android:key="build_number"
-        android:order="39"
+        android:order="43"
         android:title="@string/build_number"
         android:summary="@string/summary_placeholder"
         settings:allowDividerAbove="true"/>
