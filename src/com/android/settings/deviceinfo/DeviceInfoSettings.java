@@ -36,6 +36,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
+import com.android.settings.deviceinfo.UpdatePreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -129,6 +130,7 @@ public class DeviceInfoSettings extends DashboardFragment implements Indexable {
     private static List<AbstractPreferenceController> buildPreferenceControllers(Context context,
             Activity activity, Fragment fragment, Lifecycle lifecycle) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new UpdatePreferenceController(context));
         controllers.add(new DeviceModelPreferenceController(context, fragment));
         controllers.add(new FirmwareVersionPreferenceController(context, fragment));
         controllers.add(new IpAddressPreferenceController(context, lifecycle));
