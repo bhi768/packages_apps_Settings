@@ -21,9 +21,7 @@
     <string name="candyshop_title">Candy Shop</string>
     <string name="candyshop_activity_summary">Where the sweet stuff happens...</string>
 
-    <!-- Candy Version -->
-    <string name="candy_version">Candy Build</string>
-
+    <!-- Themes -->
     <string name="theme_category">Theming</string>
     <string name="theme_select_title">Themes</string>
     <string name="theme_select_summary">Browse and select installed themes</string>
@@ -52,4 +50,10 @@
     <string name="build_date">Build date</string>
     <string name="build_date_default">2015-01-01-0000</string>
     <string name="keywords_build_date">build date, build info</string>
+
+    <!-- SELinux status -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
 </resources>
