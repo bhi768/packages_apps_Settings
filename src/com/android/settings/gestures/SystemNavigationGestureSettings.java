@@ -326,6 +326,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment
     static int getBackHeight(Context context) {
         return Settings.System.getInt(context.getContentResolver(),
                 Settings.System.BACK_GESTURE_HEIGHT, 0);
+    }
+
     static int getPillToggleState(Context context) {
         return Settings.System.getInt(context.getContentResolver(),
                 Settings.System.GESTURE_PILL_TOGGLE, 0);
