@@ -3411,12 +3411,12 @@
         </activity>
 
         <!-- CandyShop... yay! -->
-        <activity android:name=".Settings$CandyShopSettingsActivity"
+        <activity android:name=".Settings$CandyShopActivity"
             android:label="@string/candyshop_title"
             android:icon="@drawable/ic_homepage_candy"
             android:taskAffinity="">
             <intent-filter android:priority="1">
-                <action android:name="org.candy.candyshop.OwlsNestSettings" />
+                <action android:name="org.candy.candyshop.CandyShop" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>

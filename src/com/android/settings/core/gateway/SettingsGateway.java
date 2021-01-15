@@ -310,7 +310,7 @@ public class SettingsGateway {
             InteractAcrossProfilesSettings.class.getName(),
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
-            CandyShopSettings.class.getName()
+            CandyShop.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
