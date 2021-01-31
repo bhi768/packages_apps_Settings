@@ -350,7 +350,7 @@ public class SettingsGateway {
             Settings.MyDeviceInfoActivity.class.getName(),
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
-            // AOSiP
+            // Candy stuff
             Settings.CandyShopActivity.class.getName(),
     };
 }

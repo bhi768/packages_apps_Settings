@@ -17,11 +17,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- OwlsNest -->
+    <!-- CandyShop -->
     <string name="candyshop_title">Candy Shop</string>
     <string name="candyshop_activity_summary">Where the sweet stuff happens...</string>
 
-    <!-- AOSiP Version -->
+    <!-- Candy Version -->
     <string name="candy_version">Candy Build</string>
 
     <string name="theme_category">Theming</string>
