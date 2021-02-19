@@ -51,7 +51,7 @@ public class DoubleTapPowerFlashlightPreferenceController extends BasePreference
 
     @Override
     public int getAvailabilityStatus() {
-        return Utils.deviceHasFlashlight(mContext)
+        return CandyUtils.deviceHasFlashlight(mContext)
                 ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
